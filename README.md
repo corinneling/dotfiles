@@ -1,8 +1,7 @@
-#My first dotfiles!
+# My first dotfiles!
 
 ![moose success](/images/success.gif)
 
 *This space is to store and experiment with my dotfiles for bash*
 
-
- next goal is to figure out markdown
+*My next goal is to figure out markdown*
