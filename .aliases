@@ -1,0 +1,45 @@
+# ------------------------------------------------------------------
+# | 11.12.18 Aliases                                               |
+# ------------------------------------------------------------------
+
+# to to documents
+  alias docs="cd ~/Documents"
+
+# go to desktop
+  alias desk="cd ~/Desktop"
+
+# clear
+  alias c="clear"
+
+# restart the mac ui
+  alias killui="killall SystemUIServer"
+
+# show list of all fills in long list format
+  alias ll="ls -la"
+
+# restart finder
+  alias killfind="killall Finder"
+
+# open the .bashrc file in atom
+  alias openbp="open -a /Applications/Atom.app ~/.bash_profile"
+
+# open the .bashrc file in atom
+  alias openbrc="open -a /Applications/Atom.app ~/.bashrc"
+
+# open the .aliases file in atom
+  alias openal="open -a /Applications/Atom.app ~/.aliases"
+
+# start calculator
+  alias calc="bc -l"
+
+# show command history
+  alias h="history"
+
+# show available ports
+  alias ports="netstat"
+
+# restart bash
+  alias rbash="source ~/.bashrc"
+  
+# find out what is using the most space
+  alias space="du -h -d1"
