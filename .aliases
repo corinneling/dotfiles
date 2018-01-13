@@ -1,8 +1,11 @@
 # ------------------------------------------------------------------
-# | 11.12.18 Aliases                                               |
+# | Aliases - 11.13.18                                             |
 # ------------------------------------------------------------------
 
-# to to documents
+# standard navigation
+  alias ..="cd .."
+
+# go to documents
   alias docs="cd ~/Documents"
 
 # go to desktop
@@ -40,6 +43,6 @@
 
 # restart bash
   alias rbash="source ~/.bashrc"
-  
+
 # find out what is using the most space
   alias space="du -h -d1"

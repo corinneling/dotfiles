@@ -1,12 +1,12 @@
 # ------------------------------------------------------------------
-# | 11.12.18 Functions                                             |
+# | Functions - 11.13.18                                           |
 # ------------------------------------------------------------------
 
-# Useful -----------------------------------------------------------
 # make a directory and go into it
   function mkd () {
     mkdir -p "$@" && cd "$@"
   }
+
 # returns how many lines are in a file
   function file_lines () {
     function find_number () {
@@ -14,17 +14,24 @@
     }
     echo Your file $@ has $( find_number $@ ) lines.
   }
-# Messing around -----------------------------------------------------------
+  
+# go to the directory and list out the contents
+  function cl () {
+    cd $@ && ls -la
+  }
+
 # trying out functions in here
   function dont_worry () {
     echo 'be happy'
   }
+
 # congratulate yourself with a happy dance
   function happydance {
     echo '
     ┏(-_-)┛┗(-_-﻿ )┓┗(-_-)┛┏(-_-)┓
     '
   }
+
 # having a sad day, here's a cute owl
   function sadday {
     echo '
