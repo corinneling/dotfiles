@@ -1,5 +1,8 @@
-My first dotfiles!
+#My first dotfiles!
 
-This space is to store and experiment with my dotfiles.
+![moose success](https://gph.is/1gYQK68)
 
-# next goal is to figure out markdown 
+*This space is to store and experiment with my dotfiles for bash*
+
+
+ next goal is to figure out markdown
