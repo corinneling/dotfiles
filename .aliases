@@ -18,7 +18,7 @@
   alias killui="killall SystemUIServer"
 
 # show list of all fills in long list format
-  alias ll="ls -la"
+  alias ll='ls -la'
 
 # restart finder
   alias killfind="killall Finder"
@@ -46,3 +46,16 @@
 
 # find out what is using the most space
   alias space="du -h -d1"
+
+# basic git commands
+  alias gst='git status'
+  alias gco='git checkout'
+  alias gci='git commit'
+  alias grb='git rebase'
+  alias gbr='git branch'
+  alias gad='git add -A'
+  alias gpl='git pull'
+  alias gpu='git push'
+
+# cleans up the git log output
+  alias glog='git log --date-order --all --graph --format="%C(green)%h%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
