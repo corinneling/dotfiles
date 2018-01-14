@@ -24,15 +24,6 @@
 # restart finder
   alias killfind="killall Finder"
 
-# open the .bashrc file in atom
-  alias openbp="open -a /Applications/Atom.app ~/.bash_profile"
-
-# open the .bashrc file in atom
-  alias openbrc="open -a /Applications/Atom.app ~/.bashrc"
-
-# open the .aliases file in atom
-  alias openal="open -a /Applications/Atom.app ~/.aliases"
-
 # start calculator
   alias calc="bc -l"
 

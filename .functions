@@ -30,6 +30,16 @@
   	fi;
   }
 
+# `a` with no arguments opens the current directory in Atom, otherwise opens the given locations
+# from mathiasbynens
+  function a() {
+  	if [ $# -eq 0 ]; then
+  		atom .;
+  	else
+  		atom "$@";
+  	fi;
+  }
+
 # playing with functions in here
   function dont_worry () {
     echo 'be happy'
