@@ -14,13 +14,23 @@
     }
     echo Your file $@ has $( find_number $@ ) lines.
   }
-  
+
 # go to the directory and list out the contents
   function cl () {
     cd $@ && ls -la
   }
 
-# trying out functions in here
+# `o` with no arguments opens the current directory, otherwise opens the given location
+# from mathiasbynens
+  function o() {
+  	if [ $# -eq 0 ]; then
+  		open .;
+  	else
+  		open "$@";
+  	fi;
+  }
+
+# playing with functions in here
   function dont_worry () {
     echo 'be happy'
   }
