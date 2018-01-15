@@ -1,2 +1,35 @@
-# change the bash prompt
-PS1='\[\e[1m\A\] \[\e[38m\d\] \[\e[33m\]$(git branch 2>/dev/null | sed -n "s/* \(.*\)/\1 /p")\[\e[32m\w\] \[\e[22m\u\] \n $(if [[ $1 == 0 ]]; then printf "\xF0\x9F\x98\xBF"; else printf "\xF0\x9F\x98\xBB"; fi)\[\e[0m\]  \[\e[38m\]$ \[\e[0m\]'
+# ------------------------------------------------------------------
+# | Change the Bash Prompt - 11.15.18                              |
+# ------------------------------------------------------------------
+
+
+# will show heart eye cat when command went through
+# will show sad cat when command did not go through
+  function cats () {
+  if [ $? == 0 ]; then
+    printf '\xF0\x9F\x98\xBB'
+  else
+    printf '\xF0\x9F\x98\xBF'
+  fi
+  }
+
+
+# time 24 hours
+  PS1="\[\e[1m\A\] ";
+# date
+  PS1+="\[\e[38m\d\] ";
+# git branch
+  PS1+="\[\e[33m\]$(git branch 2>/dev/null | sed -n "s/* \(.*\)/\1 /p")";
+# directory
+  PS1+="\[\e[32m\W\] ";
+# user
+  PS1+="\[\e[22m\u\] ";
+# exit status
+  PS1+="\[\e[31m\$?\] ";
+# newline
+  PS1+="\n";
+# calling previous cats func for exit status
+  PS1+="$(cats)  ";
+# reset color
+  PS1+="\[\e[0m\]$ ";
+export PS1;

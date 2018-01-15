@@ -2,8 +2,6 @@
 # | Functions - 11.13.18                                           |
 # ------------------------------------------------------------------
 
-
-
 # make a directory and go into it
   function mkd () {
     mkdir -p "$@" && cd "$@"
