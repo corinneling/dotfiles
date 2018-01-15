@@ -49,5 +49,11 @@
   alias gpl='git pull'
   alias gpu='git push'
 
+# updates software verbosely
+  alias supdate='sudo softwareupdate -ir --verbose'
+
+# checks for any updates
+  alias any_updates='sudo softwareupdate -l'
+
 # cleans up the git log output
   alias glog='git log --date-order --all --graph --format="%C(green)%h%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'

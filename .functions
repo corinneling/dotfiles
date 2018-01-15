@@ -2,6 +2,8 @@
 # | Functions - 11.13.18                                           |
 # ------------------------------------------------------------------
 
+
+
 # make a directory and go into it
   function mkd () {
     mkdir -p "$@" && cd "$@"
@@ -48,7 +50,7 @@
 # congratulate yourself with a happy dance
   function happydance {
     echo '
-    ┏(-_-)┛┗(-_-﻿ )┓┗(-_-)┛┏(-_-)┓
+    ┏(-_-)┛ ┗(-_-﻿ )┓ ┗(-_-)┛ ┏(-_-)┓
     '
   }
 
