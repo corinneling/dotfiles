@@ -48,8 +48,10 @@
   alias ga='git add -A'
   alias gl='git pull'
   alias gp='git push'
+  alias gd="git diff"
   alias gcb="git checkout -b $@"
   alias gsr="git show $@"
+  alias pushu="git push --set-upstream origin $@"
   alias fbase='git fetch && git rebase origin/master'
   alias gpm='git pull origin master'
   alias gre='git rebase origin/master'
