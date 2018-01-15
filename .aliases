@@ -2,6 +2,8 @@
 # | Aliases - 11.13.18                                             |
 # ------------------------------------------------------------------
 
+git config --global color.ui auto
+
 
 # standard navigation
   alias ..="cd .."
