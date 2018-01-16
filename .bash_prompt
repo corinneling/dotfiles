@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------
-# | Change the Bash Prompt - 11.15.18                              |
+# | Change the Bash Prompt - 11.16.18                              |
 # ------------------------------------------------------------------
 
 # I want to have this eventually be a git status function in the prompt
@@ -12,6 +12,7 @@
   }
 
 # simpler version of the git branch function
+# what exactly is this saying though?
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ 'on' \1/'
 }
@@ -31,7 +32,7 @@ parse_git_branch() {
   PS1+="\[\e[33m\$?\] ";
 # newline
   PS1+="\n";
-# calling previous cats func for exit status
+# calling previous cats func for exit status (not working now but oh well)
   PS1+="$(cats)  ";
 # reset color
   PS1+="\[\e[0m\]$ ";
