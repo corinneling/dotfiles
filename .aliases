@@ -5,12 +5,16 @@
 
 # standard navigation
   alias ..="cd .."
+  alias home="cd ~"
 
 # go to documents
   alias docs="cd ~/Documents"
 
 # go to desktop
   alias desk="cd ~/Desktop"
+
+# go to sparkbox apprentice repo
+  alias spp="cd ~/sparkbox-protege"
 
 # clear
   alias c="clear"
