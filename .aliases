@@ -55,6 +55,9 @@
   alias gd="git diff"
   alias gcb="git checkout -b $@"
   alias gsr="git show $@"
+  alias gfu="git fetch upstream"
+  alias grv="git remote -v"
+  alias grau="git remote add upstream $@"
   alias gup="git push --set-upstream origin $@"
   alias fbase='git fetch && git rebase origin/master'
   alias gpm='git pull origin master'
