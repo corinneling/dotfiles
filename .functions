@@ -3,7 +3,7 @@
 # ------------------------------------------------------------------
 
 
-# setup a project
+# setup a ruby project
 
   # variables
   actions=(make_gemfile make_rakefile make_gitignore make_folders add_files init_repo)
@@ -23,69 +23,50 @@
       done
    }
 
-# make a Gemfile
-  function make_gemfile () {
+   function make_gemfile () {
+      cp ~/templates/Gemfile Gemfile
+      progress
+      echo "generating Gemfile"
+      bundle install
+   }
 
-    touch Gemfile
-    progress
-    echo "creating Gemfile"
-    echo -e "source 'https://rubygems.org'\n\ngem 'minitest'\ngem 'rake'\ngem 'simplecov', require: false, group: :test\n" >> Gemfile
-    progress
-    echo "adding gems"
-    bundle install
-  }
+   function make_rakefile () {
+      cp ~/templates/Rakefile Rakefile
+      progress
+      echo "generating Rakefile"
+    }
 
-  function make_rakefile () {
-    touch Rakefile
-    progress
-    echo "creating Rakefile"
-    echo -e "require 'rake/testtask'\n\ntask :default => :test\n\nRake::TestTask.new do |t|\n  t.pattern = 'test/test_*.rb'\nend\n\ntask :start do\n ruby 'lib/start.rb'\nend" >> Rakefile
-    progress
-    echo "adding content to Rakefile"
- }
+    function make_gitignore () {
+       cp ~/templates/.gitignore .gitignore
+       progress
+       echo "generating .gitignore"
+     }
 
- function make_gitignore () {
-    touch .gitignore
-    progress
-    echo "creating gitignore"
-    echo -e "coverage" >> .gitignore
-    progress
-    echo "adding content to gitignore"
- }
+    function make_folders () {
+      cp -r ~/templates/test ./test
+      cp -r ~/templates/lib ./lib
+      progress
+      echo "generating folders"
+    }
 
-  function make_folders () {
-    mkdir test
-    progress
-    echo "creating test folder"
-    mkdir lib
-    progress
-    echo "creating lib folder"
-  }
+    function add_files () {
+      cp ~/templates/README.md README.md
+      progress
+      echo "generating README.md"
+    }
 
-  function add_files () {
-    touch  README.md
-    progress
-    echo "creating README.md"
-    touch test/test_helper.rb
-    progress
-    echo "creating test_helper.rb"
-    echo -e "require 'simplecov'\nSimpleCov.start\n\nrequire 'minitest/autorun'\nrequire 'minitest/pride'" >> test/test_helper.rb
-    progress
-    echo "adding content to test_helper.rb"
-    progress
-    echo "creating start.rb"
-    touch lib/start.rb
-  }
-
-  function init_repo () {
-    git init
-  }
+    function init_repo () {
+      git init
+      echo -e "\nFinished! Your Ruby project skeleton is all set up."
+    }
 
   # end project setup
 
 # adding repo to github
-
   function add_repo () {
+    git add *
+    progress
+    echo "adding files to track"
     git commit -m "first commit"
     progress
     echo "sending commit"
@@ -94,7 +75,7 @@
     echo "add origin"
     git push -u origin master
     progress
-    echo "pushed to origin"
+    echo "pushed to origin\n Huzzah! Your repo is now on GitHub!"
   }
 
 
