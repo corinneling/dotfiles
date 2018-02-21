@@ -63,6 +63,9 @@
   }
 
   function add_files () {
+    touch  README.md
+    progress
+    echo "creating README.md"
     touch test/test_helper.rb
     progress
     echo "creating test_helper.rb"
@@ -79,6 +82,20 @@
   }
 
   # end project setup
+
+# adding repo to github
+
+  function add_repo () {
+    git commit -m "first commit"
+    progress
+    echo "sending commit"
+    git remote add origin "$@"
+    progress
+    echo "add origin"
+    git push -u origin master
+    progress
+    echo "pushed to origin"
+  }
 
 
 # make a directory and go into it
