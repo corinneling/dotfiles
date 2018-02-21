@@ -4,40 +4,74 @@
 
 
 # setup a project
-  function crt_rp () {
-    items=(make_gemfile make_rakefile make_gitignore make_folders init_repo)
 
-    for i in "${items[@]}"; do
+  # variables
+  actions=(make_gemfile make_rakefile make_gitignore make_folders add_files init_repo)
+
+
+  function build_ruby () {
+    for i in "${actions[@]}"; do
        $i
     done
   }
 
-# make a Gemfile and Rakefile
+   function progress () {
+      INT=0.2
+        for i in {1..3}; do
+          echo -n "."
+          sleep $INT
+      done
+   }
+
+# make a Gemfile
   function make_gemfile () {
+
     touch Gemfile
+    progress
     echo "creating Gemfile"
     echo -e "source 'https://rubygems.org'\n\ngem 'minitest'\ngem 'rake'\ngem 'simplecov', require: false, group: :test\n" >> Gemfile
+    progress
     echo "adding gems"
     bundle install
   }
 
   function make_rakefile () {
     touch Rakefile
+    progress
     echo "creating Rakefile"
     echo -e "require 'rake/testtask'\n\ntask :default => :test\n\nRake::TestTask.new do |t|\n  t.pattern = 'test/test_*.rb'\nend\n\ntask :start do\n ruby 'lib/start.rb'\nend" >> Rakefile
+    progress
     echo "adding content to Rakefile"
  }
 
  function make_gitignore () {
     touch .gitignore
+    progress
     echo "creating gitignore"
+    echo -e "coverage" >> .gitignore
+    progress
+    echo "adding content to gitignore"
  }
 
   function make_folders () {
     mkdir test
+    progress
     echo "creating test folder"
     mkdir lib
+    progress
     echo "creating lib folder"
+  }
+
+  function add_files () {
+    touch test/test_helper.rb
+    progress
+    echo "creating test_helper.rb"
+    echo -e "require 'simplecov'\nSimpleCov.start\n\nrequire 'minitest/autorun'\nrequire 'minitest/pride'" >> test/test_helper.rb
+    progress
+    echo "adding content to test_helper.rb"
+    progress
+    echo "creating start.rb"
+    touch lib/start.rb
   }
 
   function init_repo () {
