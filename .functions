@@ -1,6 +1,51 @@
 # ------------------------------------------------------------------
-# | Functions - 11.13.18                                           |
+# | Functions - 2.21.18                                           |
 # ------------------------------------------------------------------
+
+
+# setup a project
+  function crt_rp () {
+    items=(make_gemfile make_rakefile make_gitignore make_folders init_repo)
+
+    for i in "${items[@]}"; do
+       $i
+    done
+  }
+
+# make a Gemfile and Rakefile
+  function make_gemfile () {
+    touch Gemfile
+    echo "creating Gemfile"
+    echo -e "source 'https://rubygems.org'\n\ngem 'minitest'\ngem 'rake'\ngem 'simplecov', require: false, group: :test\n" >> Gemfile
+    echo "adding gems"
+    bundle install
+  }
+
+  function make_rakefile () {
+    touch Rakefile
+    echo "creating Rakefile"
+    echo -e "require 'rake/testtask'\n\ntask :default => :test\n\nRake::TestTask.new do |t|\n  t.pattern = 'test/test_*.rb'\nend\n\ntask :start do\n ruby 'lib/start.rb'\nend" >> Rakefile
+    echo "adding content to Rakefile"
+ }
+
+ function make_gitignore () {
+    touch .gitignore
+    echo "creating gitignore"
+ }
+
+  function make_folders () {
+    mkdir test
+    echo "creating test folder"
+    mkdir lib
+    echo "creating lib folder"
+  }
+
+  function init_repo () {
+    git init
+  }
+
+  # end project setup
+
 
 # make a directory and go into it
   function mkd () {
