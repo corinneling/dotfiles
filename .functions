@@ -5,60 +5,35 @@
 
 # setup a ruby project
 
-  # variables
-  actions=(make_gemfile make_rakefile make_gitignore make_folders add_files init_repo)
+  function build-ruby () {
+    progress
+    echo "generating Gemfile"
+    progress
+    echo "generating Rakefile"
+    progress
+    echo "generating .gitignore"
+    progress
+    echo "generating folders"
+    progress
+    echo "generating README.md"
+    cp -r ~/templates "$@"
+    progress
+    progress
+    echo -e "Sending you to project directory.\n"
+    cd "$@"
+    progress
+    git init
 
-
-  function build_ruby () {
-    for i in "${actions[@]}"; do
-       $i
-    done
   }
 
    function progress () {
-      INT=0.2
-        for i in {1..3}; do
-          echo -n "."
+      INT=0.1
+        for i in {1..5}; do
+          echo -n '.'
           sleep $INT
-      done
+        done
    }
 
-   function make_gemfile () {
-      cp ~/templates/Gemfile Gemfile
-      progress
-      echo "generating Gemfile"
-      bundle install
-   }
-
-   function make_rakefile () {
-      cp ~/templates/Rakefile Rakefile
-      progress
-      echo "generating Rakefile"
-    }
-
-    function make_gitignore () {
-       cp ~/templates/.gitignore .gitignore
-       progress
-       echo "generating .gitignore"
-     }
-
-    function make_folders () {
-      cp -r ~/templates/test ./test
-      cp -r ~/templates/lib ./lib
-      progress
-      echo "generating folders"
-    }
-
-    function add_files () {
-      cp ~/templates/README.md README.md
-      progress
-      echo "generating README.md"
-    }
-
-    function init_repo () {
-      git init
-      echo -e "\nFinished! Your Ruby project skeleton is all set up."
-    }
 
   # end project setup
 
