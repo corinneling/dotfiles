@@ -3,30 +3,26 @@
 # ------------------------------------------------------------------
 
 
-# standard navigation
+# go places
   alias ..="cd .."
   alias home="cd ~"
-
-# go to documents
   alias docs="cd ~/Documents"
-
-# go to desktop
+  alias proj="cd ~/projects"
   alias desk="cd ~/Desktop"
-
-# go to sparkbox apprentice repo
-  alias spp="cd ~/sparkbox-protege"
 
 # clear
   alias c="clear"
 
-# restart the mac ui
+# generate ssh keys
+  alias priv-key="openssl genrsa -out private.pem 2048"
+  alias pub-cert="openssl req -new -x509 -key private.pem -out cert.pem -days 1095"
+
+# kill stuff
   alias killui="killall SystemUIServer"
+  alias killfind="killall Finder"
 
 # show list of all fills in long list format
   alias ll='ls -lhaC'
-
-# restart finder
-  alias killfind="killall Finder"
 
 # start calculator
   alias calc="bc -l"
@@ -69,4 +65,4 @@
   alias supdate='sudo softwareupdate -ir --verbose'
 
 # checks for any updates
-  alias any_updates='sudo softwareupdate -l'
+  alias aupdates='sudo softwareupdate -l'
