@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------
-# | Aliases - 1.17.18                                             |
+# | Aliases - 3.28.18                                             |
 # ------------------------------------------------------------------
 
 
@@ -22,7 +22,7 @@
   alias killfind="killall Finder"
 
 # show list of all fills in long list format
-  alias ll='ls -lhaC'
+  alias ll='ls -lha'
 
 # start calculator
   alias calc="bc -l"
