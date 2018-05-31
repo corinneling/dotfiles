@@ -1,14 +1,10 @@
-# ------------------------------------------------------------------
-# | Aliases - 3.28.18                                             |
-# ------------------------------------------------------------------
-
-
 # go places
   alias ..="cd .."
   alias home="cd ~"
   alias docs="cd ~/Documents"
   alias proj="cd ~/projects"
   alias desk="cd ~/Desktop"
+  alias aam="cd ~/projects/a11y-audit-microsite"
 
 # clear
   alias c="clear"
@@ -23,9 +19,6 @@
 
 # show list of all fills in long list format
   alias ll='ls -lha'
-
-# start calculator
-  alias calc="bc -l"
 
 # show command history
   alias h="history"
@@ -43,21 +36,16 @@
   alias gs='git status'
   alias go='git checkout'
   alias gi='git commit'
-  alias gr='git rebase'
+  alias gca='git commit --amend'
   alias gb='git branch'
   alias ga='git add -A'
-  alias gpl='git pull'
-  alias gpsh='git push'
-  alias gd="git diff"
-  alias gcb="git checkout -b $@"
-  alias gsr="git show $@"
-  alias gfu="git fetch upstream"
-  alias grv="git remote -v"
-  alias grau="git remote add upstream $@"
-  alias gup="git push --set-upstream origin $@"
-  alias fbase='git fetch && git rebase origin/master'
-  alias gpm='git pull origin master'
-  alias gre='git rebase origin/master'
+  alias gp='git push'
+  alias gd='git diff'
+  alias gcb='git checkout -b $@'
+  alias gsr='git show $@'
+  alias gup='git push --set-upstream origin $@'
+  alias grr='git pull --rebase'
+  alias grmaster='git rebase master'
   alias glog='git log --date-order --all --graph --format="%C(green)%h%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
 
 
